@@ -1,33 +1,34 @@
-# Project
+# Hands-On Labs for AI Agents Using Azure AI Agent Service SDK and Semantic Kernel
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+This repo contains hands-on labs for building AI Agents using the Azure AI Agent Service SDK and Semantic Kernel. The Azure AI Agent Service is used to create AI agents and Semantic Kernel is used to orchestrate the agents in a multi-agent system. 
 
-As the maintainer of this project, please make a few updates:
+## Prerequisites
+**Microsoft will provide the lab environment with all the prerequisites**
+* Azure subscription
+* Azure AI Foundry resource with an AI Hub and AI Project (You will set this up in Lab 1)
+* Visual Studio Code
+* Python 3.10>
+* Azure CLI
+* Azure CLI Azure ML extension
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+## Labs
 
-## Contributing
+### Lab 1 - Setup and test the lab environment
+Lab 1 walks you through how to setup the necessary lab environment for building AI Agents. This includes:
+* Setting up the AI Project in the Azure AI Foundry
+* Deploying an LLM and embedding models
+* Establish connectivity from VS Code to the AI Project
+* Perform a simple Chat Completion call to the LLM to test that your lab environment is set up properly. 
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+### Lab 2 - Build a simple AI agent
+Lab 2 introduces you to AI agents in Azure. You will learn how to build a simple AI agent that generates a bar chart comparing costs between health insurance plans.
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+### Lab 3 - Build a RAG Agent
+In Lab 3, you will be building an AI Agent that will perform Retrieval Augmented Generaton (RAG) on health plan documents. Azure AI Search will be used as the vector database for storing the embeddings for the health plan documents.
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-## Trademarks
-
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+### Lab 4 - Develop a multi-agent system
+In Lab 4, you will be creating a multi-agent system consisting of 4 agents working together to generate reports about health plan documents. You will build these 4 AI Agents:
+1. Search Agent - This agent will search an Azure AI Search index for information about specific health plan policies.
+2. Report Agent - This agent will generate a detailed report about the health plan policy based on the information returned from the Search Agent.
+3. Validation Agent - This agent will validate that the generated report meets specified requirements. In our case, making sure that the report contains information about coverage exclusions.
+4. Orchestrator Agent - This agent will act as an orchestrator that manages the communication between the Search Agent, Report Agent, and Validation Agent.
